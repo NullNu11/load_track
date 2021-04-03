@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
                       }
                   });
                   Looper.prepare();
-                  //Log.d("11111114", response.body().string());
                   Looper.loop();
               }
             }
