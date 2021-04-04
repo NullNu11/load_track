@@ -1,7 +1,6 @@
 package com.example.myapplication.Model;
 
-import android.annotation.SuppressLint;
-import android.os.Build;
+
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -28,7 +27,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-
+//版本迭代的牺牲品
+//disapper
 public class GetUserpre {
 
 
@@ -95,6 +95,8 @@ public class GetUserpre {
         return loginJson;
     }
 
+    //普通okhttp请求   网络请求数据成功
+    //参数传回handler   ui线程无法拿到数据
     public void login(User user, getuserid getusers) {
         //http://8.133.178.130:8020/user/login?id=1&password=2
         RequestBody body = new FormBody.Builder()
@@ -106,6 +108,7 @@ public class GetUserpre {
         Log.d("11111111111111", String.valueOf(requests));
 
         //新开线程同步请求
+        //1
 //        new Thread(new Runnable() {
 //            @Override
 //            public void run() {
@@ -121,6 +124,7 @@ public class GetUserpre {
 //        }).start();
 
         //异步请求
+        //2
         Call call = client.newCall(requests);
         call.enqueue(new Callback() {
             @Override
@@ -143,7 +147,8 @@ public class GetUserpre {
         getusers.returnMess(status);
     }
 
-
+    //succ
+//封装okhttp   接口回调在mainactiv
     public void postReq(User user,Callback call)
     {
         RequestBody body = new FormBody.Builder()

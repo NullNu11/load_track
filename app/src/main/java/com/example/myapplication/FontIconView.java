@@ -5,8 +5,8 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.TextView;
-
-@SuppressLint("AppCompatCustomView")
+//封装组件
+ @SuppressLint("AppCompatCustomView")
 public class FontIconView extends TextView {
 
     public FontIconView(Context context) {
