@@ -1,21 +1,21 @@
-package com.example.myapplication;
+package com.example.myapplication.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.myapplication.JsonData.LoginJsonData;
-import com.example.myapplication.Model.GetUserpre;
+import com.example.myapplication.JsonData.getsJsonData;
 import com.example.myapplication.Presenter.loginPre;
+import com.example.myapplication.R;
 import com.example.myapplication.View.getLoginMess;
 import com.example.myapplication.dao.LoginJson;
 import com.example.myapplication.dao.User;
@@ -29,7 +29,7 @@ import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity implements getLoginMess {
 
-    LoginJsonData loginJsonData = new LoginJsonData();
+    getsJsonData getsJsonData = new getsJsonData();
 
     Handler handler = new Handler() {
         @Override
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity implements getLoginMess {
     public User getUser() {
         User user = new User();
         EditText edid_userid = findViewById(R.id.user_id);
-        EditText edid_passwd = findViewById(R.id.passwd);
+        EditText edid_passwd = findViewById(R.id.passwd1);
         user.setUserid(edid_userid.getText().toString());
         user.setPassed(edid_passwd.getText().toString());
         return user;
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements getLoginMess {
 
     void updateUI(String a) {
         LoginJson loginJson = new LoginJson();
-        loginJson=loginJsonData.getJson(a);
+        loginJson= getsJsonData.getLoginJson(a);
         if(loginJson.getState()) {
             Toast.makeText(MainActivity.this,"登陆成功",Toast.LENGTH_LONG).show();
             //登录成功保存用户信息到sharedPreference
@@ -141,5 +141,7 @@ public class MainActivity extends AppCompatActivity implements getLoginMess {
 //        SharedPreferences track = getSharedPreferences("track", MODE_PRIVATE);
 //        String name=track.getString("username","0000000");
 //        Toast.makeText(this,name,Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
     }
 }

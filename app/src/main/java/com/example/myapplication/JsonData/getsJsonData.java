@@ -7,9 +7,9 @@ import com.example.myapplication.dao.LoginJson;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class LoginJsonData {
+public class getsJsonData {
 
-    public LoginJson getJson(String st) {
+    public LoginJson getLoginJson(String st) {
         LoginJson loginJson = new LoginJson();
         try {
             JSONObject jsonObject0 = new JSONObject(st);
@@ -30,5 +30,18 @@ public class LoginJsonData {
         }
         return loginJson;
     }
+
+    public Boolean verificarionJson(String s)
+    {
+        Boolean a=null;
+        try {
+            JSONObject jsonObject = new JSONObject(s);
+            a= jsonObject.getBoolean("state");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return a;
+    }
+
 
 }

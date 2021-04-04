@@ -12,7 +12,7 @@ import okhttp3.RequestBody;
 
 public class loginModImp {
 
-    public void login(User user, final Callback call) {
+    public void login(User user, Callback call) {
         RequestBody body = new FormBody.Builder()
                 .add("id", user.getUserid())
                 .add("password", user.getPassed()).build();

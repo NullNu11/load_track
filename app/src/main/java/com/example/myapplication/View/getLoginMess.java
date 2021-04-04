@@ -6,5 +6,6 @@ import com.example.myapplication.dao.User;
 public interface getLoginMess {
 
         User getUser();
+
     }
 

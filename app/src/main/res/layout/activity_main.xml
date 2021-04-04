@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Activity.MainActivity">
 
     <TextView
         android:id="@+id/login"
@@ -47,11 +47,11 @@
         android:layout_marginTop="8dp"
         android:text="@string/passedbtn"
         android:textSize="35dp"
-        app:layout_constraintEnd_toStartOf="@+id/passwd"
-        app:layout_constraintTop_toTopOf="@+id/passwd" />
+        app:layout_constraintEnd_toStartOf="@+id/passwd1"
+        app:layout_constraintTop_toTopOf="@+id/passwd1" />
 
     <EditText
-        android:id="@+id/passwd"
+        android:id="@+id/passwd1"
         android:layout_width="193dp"
         android:layout_height="57dp"
         android:layout_marginStart="84dp"
@@ -71,8 +71,8 @@
         android:layout_marginLeft="4dp"
         android:layout_marginTop="8dp"
         android:text="忘记密码"
-        app:layout_constraintStart_toEndOf="@+id/passwd"
-        app:layout_constraintTop_toTopOf="@+id/passwd" />
+        app:layout_constraintStart_toEndOf="@+id/passwd1"
+        app:layout_constraintTop_toTopOf="@+id/passwd1" />
 
     <Button
         android:id="@+id/button"

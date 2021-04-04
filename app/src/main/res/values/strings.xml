@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">实验</string>
+    <string name="app_name">追·迹</string>
     <string name="userbtn">&#xe773;</string>
-<string name="passedbtn">&#xe75b;</string>
+    <string name="passedbtn">&#xe75b;</string>
+    <string name="phone">&#xe787;</string>
 </resources>

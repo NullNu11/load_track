@@ -4,21 +4,14 @@ package com.example.myapplication.Model;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.widget.Toast;
 
-import androidx.annotation.RequiresApi;
-
-import com.example.myapplication.MainActivity;
 import com.example.myapplication.dao.LoginJson;
 import com.example.myapplication.dao.User;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.Map;
 
 import okhttp3.Call;
 import okhttp3.Callback;
