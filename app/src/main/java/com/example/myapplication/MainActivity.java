@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -120,9 +121,25 @@ public class MainActivity extends AppCompatActivity implements getLoginMess {
         loginJson=loginJsonData.getJson(a);
         if(loginJson.getState()) {
             Toast.makeText(MainActivity.this,"登陆成功",Toast.LENGTH_LONG).show();
+            //登录成功保存用户信息到sharedPreference
+            SharedPreferences userInfo = getSharedPreferences("track",MODE_PRIVATE);
+            SharedPreferences.Editor editor = userInfo.edit();//获取Editor
+            //得到Editor后，写入需要保存的数据
+            editor.putString("username", loginJson.getUsername());
+            editor.putString("userid",loginJson.getUserid());
+            editor.putString("passwd",loginJson.getPassword());
+            editor.putString("state", String.valueOf(loginJson.getState()));
+            editor.commit();//提交修改
+            Log.i("111", "保存用户信息成功");
         }
         else {
             Toast.makeText(MainActivity.this,"登陆失败",Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void register(View view) {
+//        SharedPreferences track = getSharedPreferences("track", MODE_PRIVATE);
+//        String name=track.getString("username","0000000");
+//        Toast.makeText(this,name,Toast.LENGTH_LONG).show();
     }
 }
