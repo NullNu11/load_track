@@ -7,19 +7,20 @@
     tools:context=".Activity.MainActivity">
 
     <TextView
-        android:id="@+id/login"
+        android:id="@+id/login_registe"
         android:layout_width="117dp"
         android:layout_height="64dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginLeft="120dp"
         android:layout_marginTop="124dp"
         android:gravity="center"
         android:text="登录"
         android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.example.myapplication.FontIconView
+        android:id="@+id/fontIconView6"
         android:layout_width="41dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
@@ -34,14 +35,18 @@
         android:layout_height="57dp"
         android:layout_marginStart="84dp"
         android:layout_marginLeft="84dp"
-        android:layout_marginTop="236dp"
+        android:layout_marginTop="48dp"
         android:gravity="center"
         android:hint="用户名"
         android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toEndOf="@+id/fontIconView6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/login_registe" />
 
     <com.example.myapplication.FontIconView
+        android:id="@+id/fontIconView7"
         android:layout_width="38dp"
         android:layout_height="37dp"
         android:layout_marginTop="8dp"
@@ -61,38 +66,75 @@
         android:hint="密码"
         android:inputType="textPassword"
         android:maxLength="16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toEndOf="@+id/fontIconView7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_id" />
 
     <Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="8dp"
-        android:text="忘记密码"
-        app:layout_constraintStart_toEndOf="@+id/passwd1"
-        app:layout_constraintTop_toTopOf="@+id/passwd1" />
+        android:layout_marginBottom="80dp"
+        android:onClick="mapbtn"
+        android:text="高德"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginTop="444dp"
-        android:onClick="loginbtn"
-        android:text="登录"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="308dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.582"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></Button>
+        app:layout_constraintTop_toBottomOf="@+id/passwd1">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:text="注册"
-        android:onClick="register"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toTopOf="@+id/button" />
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:onClick="register"
+            android:text="注册" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:onClick="loginbtn"
+            android:text="登录"></Button>
+    </LinearLayout>
+    <![CDATA[
+
+
+
+
+
+
+
+
+
+
+
+
+
+    />
+    />
+
+
+
+
+
+
+
+]]>
 </androidx.constraintlayout.widget.ConstraintLayout>

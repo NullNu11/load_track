@@ -3,7 +3,9 @@ package com.example.myapplication.Activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -142,6 +144,11 @@ public class MainActivity extends AppCompatActivity implements getLoginMess {
 //        String name=track.getString("username","0000000");
 //        Toast.makeText(this,name,Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+    }
+
+    public void mapbtn(View view) {
+        Intent intent = new Intent(MainActivity.this,GaodeActivity.class);
         startActivity(intent);
     }
 }

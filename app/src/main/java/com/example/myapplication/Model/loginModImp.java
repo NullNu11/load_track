@@ -23,5 +23,4 @@ public class loginModImp {
         OkHttpClient client = new OkHttpClient();
         client.newCall(requests).enqueue(call);
     }
-
 }
