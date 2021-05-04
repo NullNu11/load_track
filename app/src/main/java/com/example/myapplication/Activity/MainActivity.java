@@ -147,8 +147,14 @@ public class MainActivity extends AppCompatActivity implements getLoginMess {
         startActivity(intent);
     }
 
-    public void mapbtn(View view) {
+    public void addCarBtn(View view) {
+        Intent intent = new Intent(MainActivity.this,AddCarActivity.class);
+        startActivity(intent);
+    }
+
+    public void mapBtn(View view) {
         Intent intent = new Intent(MainActivity.this,GaodeActivity.class);
         startActivity(intent);
     }
+
 }

@@ -76,12 +76,12 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
-        android:onClick="mapbtn"
-        android:text="高德"
+        android:layout_marginStart="92dp"
+        android:layout_marginLeft="92dp"
+        android:layout_marginBottom="92dp"
+        android:onClick="addCarBtn"
+        android:text="添加车辆"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
@@ -113,28 +113,15 @@
             android:onClick="loginbtn"
             android:text="登录"></Button>
     </LinearLayout>
-    <![CDATA[
 
-
-
-
-
-
-
-
-
-
-
-
-
-    />
-    />
-
-
-
-
-
-
-
-]]>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="52dp"
+        android:hint="地图"
+        android:onClick="mapBtn"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

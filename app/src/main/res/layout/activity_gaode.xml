@@ -19,16 +19,17 @@
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="110dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_width="102dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:gravity="center"
         android:hint="终点"
         app:layout_constraintStart_toEndOf="@+id/editText"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/button3"
         android:layout_width="89dp"
         android:layout_height="59dp"
         android:layout_marginStart="8dp"
@@ -39,10 +40,62 @@
 
     <com.amap.api.maps.MapView
         android:id="@+id/map"
-        android:layout_width="361dp"
-        android:layout_height="578dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="365dp"
+        android:layout_height="519dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="196dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.amap.api.maps.MapView>
+
+    <TextView
+        android:id="@+id/carView"
+        android:layout_width="102dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:hint="车辆信息"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <TextView
+        android:id="@+id/timeView"
+        android:layout_width="102dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:hint="时间"
+        app:layout_constraintStart_toEndOf="@+id/carView"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+    <TextView
+        android:id="@+id/mileView"
+        android:layout_width="102dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:hint="距离"
+        app:layout_constraintStart_toEndOf="@+id/timeView"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <TextView
+        android:id="@+id/hashView"
+        android:layout_width="340dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:hint="哈希"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
