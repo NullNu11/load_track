@@ -13,7 +13,7 @@ public class track {
     String time;
    //public List<LatLng> latLngs;
    public List<LatLng> latLngs = new ArrayList<LatLng>();
-    public   ArrayList<LatLng> latLngss;
+
 
     public void setLatLngs(List<LatLng> latLngs) {
         this.latLngs = latLngs;
