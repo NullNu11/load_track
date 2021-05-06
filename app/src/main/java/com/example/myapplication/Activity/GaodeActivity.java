@@ -89,11 +89,11 @@ public class GaodeActivity extends AppCompatActivity implements trackView {
         mUiSettings.setZoomControlsEnabled(true);
         mUiSettings.setZoomPosition(0);
         //指南针
-        mUiSettings.setCompassEnabled(true);
+        //mUiSettings.setCompassEnabled(true);
         //比例尺
-        mUiSettings.setScaleControlsEnabled(true);
+        //mUiSettings.setScaleControlsEnabled(true);
         //定位
-        mUiSettings.setMyLocationButtonEnabled(true); //显示默认的定位按钮
+        mUiSettings.setMyLocationButtonEnabled(false); //显示默认的定位按钮
         //定位蓝点
         MyLocationStyle myLocationStyle;
 
@@ -105,8 +105,8 @@ public class GaodeActivity extends AppCompatActivity implements trackView {
         aMap.setMyLocationStyle(myLocationStyle);//设置定位蓝点的Style
         //aMap.setLocationSource(this);
         aMap.getUiSettings().setMyLocationButtonEnabled(true);//设置默认定位按钮是否显示，非必需设置。
-        aMap.setMyLocationEnabled(true);// 设置为true表示启动显示定位蓝点，false表示隐藏定位蓝点并不进行定位，默认是false。
-        aMap.moveCamera(CameraUpdateFactory.zoomTo(17));
+        //aMap.setMyLocationEnabled(true);// 设置为true表示启动显示定位蓝点，false表示隐藏定位蓝点并不进行定位，默认是false。
+        aMap.moveCamera(CameraUpdateFactory.zoomTo(10));
         myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_FOLLOW);//连续定位、且将视角移动到地图中心点，定位蓝点跟随设备移动
         //aMap.setOnCameraChangeListener(this);
         trackPre trackPre=new trackPre(GaodeActivity.this);
@@ -146,10 +146,15 @@ public class GaodeActivity extends AppCompatActivity implements trackView {
         TextView mile = findViewById(R.id.mileView);
         TextView hash = findViewById(R.id.hashView);
         TextView car = findViewById(R.id.carView);
+        TextView block=findViewById(R.id.blockView);
+        //time.setText(trackData.getTime());
+        block.setText(trackData.getDevid());
+        //time.setText("2021-05-04 10:37:20");
         time.setText(trackData.getTime());
         mile.setText(trackData.getMile()+"");
         hash.setText(trackData.getTrid());
-        car.setText(trackData.getDevstr());
+        //car.setText(trackData.getDevstr());
+        car.setText("川·A06490");
         aMap.addPolyline(new PolylineOptions().
                 addAll(trackData.getLatLngs()).width(10).color(Color.argb(255, 255, 1, 1)));
     }

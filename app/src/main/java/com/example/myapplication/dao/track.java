@@ -11,8 +11,17 @@ public class track {
     String trid;
     double mile;
     String time;
-   //public List<LatLng> latLngs;
-   public List<LatLng> latLngs = new ArrayList<LatLng>();
+    String devid;
+    //public List<LatLng> latLngs;
+    public List<LatLng> latLngs = new ArrayList<LatLng>();
+
+    public String getDevid() {
+        return devid;
+    }
+
+    public void setDevid(String devid) {
+        this.devid = devid;
+    }
 
 
     public void setLatLngs(List<LatLng> latLngs) {

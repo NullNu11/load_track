@@ -70,7 +70,13 @@ public class getsJsonData {
             jsonObject = jsonArray.getJSONObject(0);
             String jsonStr = jsonObject.getString("jsonStr");
             //一个搞定
-            track.setTime(jsonObject.getString("time"));
+
+
+            String time=jsonObject.getString("time");
+            time=delete_escape(time,'T');
+            time=delete_escape(time,'Z');
+
+            track.setTime(time);
             //去转义字符
             jsonStr = delete_escape(jsonStr, '\\');
             //Log.d("111111111111", jsonStr);
@@ -78,6 +84,7 @@ public class getsJsonData {
             JSONObject jsonObject1 = new JSONObject(jsonStr);
             jsonStr = jsonObject1.getString("points");
             track.setDevstr(jsonObject1.getString("devstr"));
+            track.setDevid(jsonObject1.getString("devid"));
             track.setTrid(jsonObject1.getString("trid"));
             track.setMile(jsonObject1.getDouble("mile"));
             JSONArray jsonArray1 = new JSONArray(jsonStr);
