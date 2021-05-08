@@ -8,12 +8,17 @@ import okhttp3.Callback;
 public class TrackPre {
     trackView trackV;
     GetTrackModel getTrackModelM;
- public TrackPre(trackView trackView){
-     this.getTrackModelM =new GetTrackModel();
-     this.trackV=trackView;
- }
+
+    public TrackPre(trackView trackView) {
+        this.getTrackModelM = new GetTrackModel();
+        this.trackV = trackView;
+    }
 
     public void addTrack(Callback callback) {
-        getTrackModelM.addCarMod(trackV.getUserid(), callback);
+        getTrackModelM.getTrackImp(trackV.getUserid(), callback);
+    }
+
+    public void findTrid(Callback callback) {
+        getTrackModelM.getBlockImp(trackV.getTrid(),callback);
     }
 }

@@ -33,11 +33,11 @@ public class GaodeActivity extends AppCompatActivity implements trackView {
 
     MapView mMapView = null;
     AMap aMap = null;
-    Handler handler=new Handler(){
+    Handler handler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
-            switch (msg.what){
+            switch (msg.what) {
                 case 1:
                     getsJsonData getsJsonData = new getsJsonData();
                     TrackDao trackDaoData = getsJsonData.trackJson((String) msg.obj);
@@ -95,20 +95,33 @@ public class GaodeActivity extends AppCompatActivity implements trackView {
         aMap.moveCamera(CameraUpdateFactory.zoomTo(10));
         myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_FOLLOW);//连续定位、且将视角移动到地图中心点，定位蓝点跟随设备移动
         //aMap.setOnCameraChangeListener(this);
-        TrackPre trackPre=new TrackPre(GaodeActivity.this);
+        TrackPre trackPre = new TrackPre(GaodeActivity.this);
         trackPre.addTrack(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
+
                 Log.d("获取失败", "onFailure: ");
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                String responseData=response.body().string();
+                String responseData = response.body().string();
                 Message message = new Message();
-                message.what=1;
-                message.obj=responseData;
+                message.what = 1;
+                message.obj = responseData;
                 handler.sendMessage(message);
+            }
+        });
+
+        trackPre.findTrid(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                Log.d("111111111111111111", response.body().string());
             }
         });
 //        List<LatLng> latLngs = new ArrayList<LatLng>();
@@ -126,18 +139,22 @@ public class GaodeActivity extends AppCompatActivity implements trackView {
         return "18817786730";
     }
 
-    void UIDesign(TrackDao trackDaoData)
-    {
+    @Override
+    public String getTrid() {
+        return "4387f42f-d4e0-4e12-8b3b-3a5348b6d9ab";
+    }
+
+    void UIDesign(TrackDao trackDaoData) {
         TextView time = findViewById(R.id.timeView);
         TextView mile = findViewById(R.id.mileView);
         TextView hash = findViewById(R.id.hashView);
         TextView car = findViewById(R.id.carView);
-        TextView block=findViewById(R.id.blockView);
+        TextView block = findViewById(R.id.blockView);
         //time.setText(trackDaoData.getTime());
         block.setText(trackDaoData.getDevid());
         //time.setText("2021-05-04 10:37:20");
         time.setText(trackDaoData.getTime());
-        mile.setText(trackDaoData.getMile()+"");
+        mile.setText(trackDaoData.getMile() + "");
         hash.setText(trackDaoData.getTrid());
         //car.setText(trackDaoData.getDevstr());
         car.setText("川·A06490");
@@ -146,7 +163,6 @@ public class GaodeActivity extends AppCompatActivity implements trackView {
     }
 
 }
-
 
 
 //    //定位需要的数据

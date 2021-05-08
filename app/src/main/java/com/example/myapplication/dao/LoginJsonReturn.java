@@ -1,5 +1,5 @@
 package com.example.myapplication.dao;
-
+//需要在登录的时候记录  使用一次
 public class LoginJsonReturn {
     String userid;
     String password;
