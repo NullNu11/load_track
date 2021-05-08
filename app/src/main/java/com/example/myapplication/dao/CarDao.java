@@ -1,6 +1,6 @@
 package com.example.myapplication.dao;
 
-public class CarMess {
+public class CarDao {
     String CarInfo;
     String CarUser;
     String CarStr;

@@ -1,6 +1,6 @@
 package com.example.myapplication.Model;
 
-import com.example.myapplication.dao.registerData;
+import com.example.myapplication.dao.RegisterData;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,7 +13,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 
 
-public class registerModel {
+public class RegisterModel {
 
     //发送验证码
    public void verificationCode(String phone,Callback callback)
@@ -27,7 +27,7 @@ public class registerModel {
         client.newCall(request).enqueue(callback);
     }
     //伪get  加post form表单请求完成注册
-    public void sendRegister(registerData data, Callback call)
+    public void sendRegister(RegisterData data, Callback call)
     {
        if(!data.getPhoneNum().equals("error"))
        {

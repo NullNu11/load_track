@@ -1,7 +1,8 @@
 package com.example.myapplication.dao;
 
-public class registerData {
+public class RegisterData {
     String userName;
+
     String phoneNum;
     String passWd;
     String verifCode;

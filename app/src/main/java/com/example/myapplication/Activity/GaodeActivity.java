@@ -4,40 +4,26 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
-import android.location.Location;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 
-import com.amap.api.location.AMapLocation;
-import com.amap.api.location.AMapLocationClient;
-import com.amap.api.location.AMapLocationClientOption;
-import com.amap.api.location.AMapLocationListener;
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.CameraUpdateFactory;
-import com.amap.api.maps.LocationSource;
 import com.amap.api.maps.MapView;
 import com.amap.api.maps.UiSettings;
-import com.amap.api.maps.model.BitmapDescriptor;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
-import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.MyLocationStyle;
 import com.amap.api.maps.model.PolylineOptions;
 import com.example.myapplication.JsonData.getsJsonData;
-import com.example.myapplication.Model.CheckName;
-import com.example.myapplication.Presenter.trackPre;
+import com.example.myapplication.Presenter.TrackPre;
 import com.example.myapplication.R;
 import com.example.myapplication.View.trackView;
-import com.example.myapplication.dao.track;
+import com.example.myapplication.dao.TrackDao;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -54,8 +40,8 @@ public class GaodeActivity extends AppCompatActivity implements trackView {
             switch (msg.what){
                 case 1:
                     getsJsonData getsJsonData = new getsJsonData();
-                    track trackData = getsJsonData.trackJson((String) msg.obj);
-                    UIDesign(trackData);
+                    TrackDao trackDaoData = getsJsonData.trackJson((String) msg.obj);
+                    UIDesign(trackDaoData);
 
                     break;
             }
@@ -109,7 +95,7 @@ public class GaodeActivity extends AppCompatActivity implements trackView {
         aMap.moveCamera(CameraUpdateFactory.zoomTo(10));
         myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_FOLLOW);//连续定位、且将视角移动到地图中心点，定位蓝点跟随设备移动
         //aMap.setOnCameraChangeListener(this);
-        trackPre trackPre=new trackPre(GaodeActivity.this);
+        TrackPre trackPre=new TrackPre(GaodeActivity.this);
         trackPre.addTrack(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -140,23 +126,23 @@ public class GaodeActivity extends AppCompatActivity implements trackView {
         return "18817786730";
     }
 
-    void UIDesign(track trackData)
+    void UIDesign(TrackDao trackDaoData)
     {
         TextView time = findViewById(R.id.timeView);
         TextView mile = findViewById(R.id.mileView);
         TextView hash = findViewById(R.id.hashView);
         TextView car = findViewById(R.id.carView);
         TextView block=findViewById(R.id.blockView);
-        //time.setText(trackData.getTime());
-        block.setText(trackData.getDevid());
+        //time.setText(trackDaoData.getTime());
+        block.setText(trackDaoData.getDevid());
         //time.setText("2021-05-04 10:37:20");
-        time.setText(trackData.getTime());
-        mile.setText(trackData.getMile()+"");
-        hash.setText(trackData.getTrid());
-        //car.setText(trackData.getDevstr());
+        time.setText(trackDaoData.getTime());
+        mile.setText(trackDaoData.getMile()+"");
+        hash.setText(trackDaoData.getTrid());
+        //car.setText(trackDaoData.getDevstr());
         car.setText("川·A06490");
         aMap.addPolyline(new PolylineOptions().
-                addAll(trackData.getLatLngs()).width(10).color(Color.argb(255, 255, 1, 1)));
+                addAll(trackDaoData.getLatLngs()).width(10).color(Color.argb(255, 255, 1, 1)));
     }
 
 }
@@ -175,7 +161,7 @@ public class GaodeActivity extends AppCompatActivity implements trackView {
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_gaode);
-//        new CheckName().check_name();
+//        new CheckNameModel().check_name();
 //    }
 //}
 //        //获取地图控件引用

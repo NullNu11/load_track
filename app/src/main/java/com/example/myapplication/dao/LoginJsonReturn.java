@@ -1,6 +1,6 @@
 package com.example.myapplication.dao;
 
-public class LoginJson {
+public class LoginJsonReturn {
     String userid;
     String password;
     String username;

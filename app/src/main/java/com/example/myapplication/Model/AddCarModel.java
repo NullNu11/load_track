@@ -1,7 +1,6 @@
 package com.example.myapplication.Model;
 
-import com.example.myapplication.dao.CarMess;
-import com.example.myapplication.dao.User;
+import com.example.myapplication.dao.CarDao;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,18 +12,18 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 
-public class AddCar {
+public class AddCarModel {
     String url="http://8.133.178.130:8010/car/add";
 
-    public void addCarMod(CarMess carMess, Callback call) {
-       if(carMess!=null){
-           if(!carMess.getCarUser().equals("error")) {
+    public void addCarMod(CarDao carDao, Callback call) {
+       if(carDao !=null){
+           if(!carDao.getCarUser().equals("error")) {
                JSONObject jsonObject = new JSONObject();
                try {
-                   jsonObject.put("carInfo",carMess.getCarInfo());
-                   jsonObject.put("carStr",carMess.getCarStr());
-                   jsonObject.put("carUser",carMess.getCarUser());
-                   //jsonObject.put("CarId", String.valueOf(carMess.getCarId()));
+                   jsonObject.put("carInfo", carDao.getCarInfo());
+                   jsonObject.put("carStr", carDao.getCarStr());
+                   jsonObject.put("carUser", carDao.getCarUser());
+                   //jsonObject.put("CarId", String.valueOf(carDao.getCarId()));
                } catch (JSONException e) {
                    e.printStackTrace();
                }

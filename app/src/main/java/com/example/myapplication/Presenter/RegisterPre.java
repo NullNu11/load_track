@@ -1,18 +1,18 @@
 package com.example.myapplication.Presenter;
 
 
-import com.example.myapplication.Model.registerModel;
+import com.example.myapplication.Model.RegisterModel;
 import com.example.myapplication.View.registerView;
 
 import okhttp3.Callback;
 
 
-public class registerPre {
+public class RegisterPre {
     registerView registerView;
-    registerModel registerModel;
+    RegisterModel registerModel;
 
-    public registerPre(registerView registerView) {
-        this.registerModel = new registerModel();
+    public RegisterPre(registerView registerView) {
+        this.registerModel = new RegisterModel();
         this.registerView = registerView;
     }
 

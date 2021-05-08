@@ -8,10 +8,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.myapplication.Model.AddCar;
+import com.example.myapplication.Model.AddCarModel;
 import com.example.myapplication.R;
 import com.example.myapplication.View.addCarView;
-import com.example.myapplication.dao.CarMess;
+import com.example.myapplication.dao.CarDao;
 
 import java.io.IOException;
 
@@ -28,7 +28,7 @@ public class AddCarActivity extends AppCompatActivity implements addCarView {
     }
 
     public void btnSubmit(View view) {
-       new AddCar().addCarMod(getCarmess(), new Callback() {
+       new AddCarModel().addCarMod(getCarmess(), new Callback() {
            @Override
            public void onFailure(Call call, IOException e) {
                Log.d("1111111111", e.getMessage());
@@ -42,11 +42,11 @@ public class AddCarActivity extends AppCompatActivity implements addCarView {
     }
 
     @Override
-    public CarMess getCarmess() {
-        CarMess carMess = new CarMess();
+    public CarDao getCarmess() {
+        CarDao carDao = new CarDao();
         //后端数据库自增列    不需要传输
-        //carMess.setCarId(98);
-        SharedPreferences userInfo = getSharedPreferences("track",MODE_PRIVATE);
+        //carDao.setCarId(98);
+        SharedPreferences userInfo = getSharedPreferences("TrackDao",MODE_PRIVATE);
         SharedPreferences.Editor editor = userInfo.edit();//获取Editor
         //得到Editor后，写入需要保存的数据
         String userId=null;
@@ -55,10 +55,10 @@ public class AddCarActivity extends AppCompatActivity implements addCarView {
         EditText  info=findViewById(R.id.textCarstr);
         if(info.getText()!=null&&id.getText()!=null)
         {
-            carMess.setCarInfo(info.getText().toString());
-            carMess.setCarStr(id.getText().toString());
-            carMess.setCarUser(userId);
-            return carMess;
+            carDao.setCarInfo(info.getText().toString());
+            carDao.setCarStr(id.getText().toString());
+            carDao.setCarUser(userId);
+            return carDao;
         }
        return null;
     }
