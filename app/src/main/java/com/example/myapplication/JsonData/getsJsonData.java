@@ -10,9 +10,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class getsJsonData {
+
+    HashMap<String,String> map=new HashMap<>();
 
     public LoginJsonReturn getLoginJson(String st) {
         LoginJsonReturn loginJsonReturn = new LoginJsonReturn();
@@ -75,6 +79,40 @@ public class getsJsonData {
     //存在转义字符的json
     public TrackDao trackJson(String str) {
         //List<LatLng> latLngs = new ArrayList<LatLng>();
+        map.put("xin","新");
+        map.put("zang","藏");
+        map.put("qing","青");
+        map.put("chuan","川");
+        map.put("hu","沪");
+        map.put("xiang","湘");
+        map.put("zhe","浙");
+        map.put("su","苏");
+        map.put("min","闽");
+        map.put("yue","粤");
+        map.put("qiong","琼");
+        map.put("hei","黑");
+        map.put("jing","京");
+        map.put("meng","蒙");
+        map.put("ji","吉");
+        map.put("ji","冀");
+        map.put("gan","赣");
+        map.put("yu","豫");
+        map.put("yu","渝");
+        map.put("jin","晋");
+        map.put("gan","甘");
+        map.put("jin","津");
+        map.put("wan","皖");
+        map.put("qian","黔");
+        map.put("tai","台");
+        map.put("shan","陕");
+        map.put("e","鄂");
+        map.put("lu","鲁");
+        map.put("dian","滇");
+        map.put("liao","辽");
+        map.put("gui","桂");
+        map.put("ning","宁");
+        map.put("gang","港");
+        map.put("ao","澳");
         TrackDao TrackDao = new TrackDao();
         List<LatLng> latLngs = TrackDao.latLngs;
         try {
