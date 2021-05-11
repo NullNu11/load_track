@@ -94,12 +94,12 @@ public class getsJsonData {
         map.put("jing","京");
         map.put("meng","蒙");
         map.put("ji","吉");
-        map.put("ji","冀");
+        map.put("ji1","冀");
         map.put("gan","赣");
         map.put("yu","豫");
-        map.put("yu","渝");
-        map.put("jin","晋");
-        map.put("gan","甘");
+        map.put("yu1","渝");
+        map.put("jin1","晋");
+        map.put("gan1","甘");
         map.put("jin","津");
         map.put("wan","皖");
         map.put("qian","黔");
