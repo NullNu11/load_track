@@ -1,11 +1,11 @@
 package com.example.myapplication.View;
 
-import com.example.myapplication.dao.registerData;
+import com.example.myapplication.dao.RegisterData;
 
 public interface registerView {
 
    public String getphone();
 
-   public registerData getRegisterData();
+   public RegisterData getRegisterData();
 
 }

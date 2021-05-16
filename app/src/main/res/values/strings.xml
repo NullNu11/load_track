@@ -3,4 +3,5 @@
     <string name="userbtn">&#xe773;</string>
     <string name="passedbtn">&#xe75b;</string>
     <string name="phone">&#xe787;</string>
+    <string name="getTridUrl">http://139.196.30.139:3000/searchBlockByTrid?trid=</string>
 </resources>

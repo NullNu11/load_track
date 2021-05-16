@@ -5,7 +5,7 @@ import com.amap.api.maps.model.LatLng;
 import java.util.ArrayList;
 import java.util.List;
 
-public class track {
+public class TrackDao {
     String userid;
     String devstr;
     String trid;

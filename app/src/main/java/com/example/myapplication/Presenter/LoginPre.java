@@ -1,21 +1,21 @@
 package com.example.myapplication.Presenter;
 
-import com.example.myapplication.Model.loginModImp;
+import com.example.myapplication.Model.LoginModel;
 import com.example.myapplication.View.getLoginMess;
 
 import okhttp3.Callback;
 
 
-public class loginPre {
+public class LoginPre {
     getLoginMess getLoginMess;
-    loginModImp loginModImp;
+    LoginModel LoginModel;
 
-    public loginPre(getLoginMess getLoginMess) {
+    public LoginPre(getLoginMess getLoginMess) {
         this.getLoginMess = getLoginMess;
-        this.loginModImp = new loginModImp();
+        this.LoginModel = new LoginModel();
     }
 
     public void loginVandM(Callback call){
-        loginModImp.login(getLoginMess.getUser(),call);
+        LoginModel.login(getLoginMess.getUser(),call);
      }
 }

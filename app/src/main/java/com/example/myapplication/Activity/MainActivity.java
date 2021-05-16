@@ -3,9 +3,7 @@ package com.example.myapplication.Activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,11 +14,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.myapplication.JsonData.getsJsonData;
-import com.example.myapplication.Presenter.loginPre;
+import com.example.myapplication.Presenter.LoginPre;
 import com.example.myapplication.R;
 import com.example.myapplication.View.getLoginMess;
-import com.example.myapplication.dao.LoginJson;
-import com.example.myapplication.dao.User;
+import com.example.myapplication.dao.LoginJsonReturn;
+import com.example.myapplication.dao.UserDao;
 
 import java.io.IOException;
 
@@ -53,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements getLoginMess {
 
     public void loginbtn(View view) {
 
-        loginPre loginPre = new loginPre(this);
+        LoginPre loginPre = new LoginPre(this);
         loginPre.loginVandM(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -109,28 +107,28 @@ public class MainActivity extends AppCompatActivity implements getLoginMess {
 
 
     @Override
-    public User getUser() {
-        User user = new User();
+    public UserDao getUser() {
+        UserDao userDao = new UserDao();
         EditText edid_userid = findViewById(R.id.user_id);
         EditText edid_passwd = findViewById(R.id.passwd1);
-        user.setUserid(edid_userid.getText().toString());
-        user.setPassed(edid_passwd.getText().toString());
-        return user;
+        userDao.setUserid(edid_userid.getText().toString());
+        userDao.setPassed(edid_passwd.getText().toString());
+        return userDao;
     }
 
     void updateUI(String a) {
-        LoginJson loginJson = new LoginJson();
-        loginJson= getsJsonData.getLoginJson(a);
-        if(loginJson.getState()) {
+        LoginJsonReturn loginJsonReturn = new LoginJsonReturn();
+        loginJsonReturn = getsJsonData.getLoginJson(a);
+        if(loginJsonReturn.getState()) {
             Toast.makeText(MainActivity.this,"登陆成功",Toast.LENGTH_LONG).show();
             //登录成功保存用户信息到sharedPreference
-            SharedPreferences userInfo = getSharedPreferences("track",MODE_PRIVATE);
+            SharedPreferences userInfo = getSharedPreferences("TrackDao",MODE_PRIVATE);
             SharedPreferences.Editor editor = userInfo.edit();//获取Editor
             //得到Editor后，写入需要保存的数据
-            editor.putString("username", loginJson.getUsername());
-            editor.putString("userid",loginJson.getUserid());
-            editor.putString("passwd",loginJson.getPassword());
-            editor.putString("state", String.valueOf(loginJson.getState()));
+            editor.putString("username", loginJsonReturn.getUsername());
+            editor.putString("userid", loginJsonReturn.getUserid());
+            editor.putString("passwd", loginJsonReturn.getPassword());
+            editor.putString("state", String.valueOf(loginJsonReturn.getState()));
             editor.commit();//提交修改
             Log.i("111", "保存用户信息成功");
         }
@@ -140,8 +138,8 @@ public class MainActivity extends AppCompatActivity implements getLoginMess {
     }
 
     public void register(View view) {
-//        SharedPreferences track = getSharedPreferences("track", MODE_PRIVATE);
-//        String name=track.getString("username","0000000");
+//        SharedPreferences TrackDao = getSharedPreferences("TrackDao", MODE_PRIVATE);
+//        String name=TrackDao.getString("username","0000000");
 //        Toast.makeText(this,name,Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);

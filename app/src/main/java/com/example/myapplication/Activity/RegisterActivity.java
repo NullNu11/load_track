@@ -2,27 +2,23 @@ package com.example.myapplication.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Looper;
-import android.util.JsonReader;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.myapplication.JsonData.getsJsonData;
-import com.example.myapplication.Model.registerModel;
-import com.example.myapplication.Presenter.registerPre;
+import com.example.myapplication.Presenter.RegisterPre;
 import com.example.myapplication.R;
 import com.example.myapplication.View.registerView;
-import com.example.myapplication.dao.registerData;
+import com.example.myapplication.dao.RegisterData;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.security.MessageDigest;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -35,7 +31,7 @@ public class RegisterActivity extends AppCompatActivity implements registerView 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
     }
-    registerPre registerPre = new registerPre(this);
+    RegisterPre registerPre = new RegisterPre(this);
     //注册按钮
     public void register(View view) {
         final String[] msg = {","};
@@ -116,7 +112,7 @@ public class RegisterActivity extends AppCompatActivity implements registerView 
     }
 
     @Override
-    public registerData getRegisterData() {
+    public RegisterData getRegisterData() {
         EditText userid=findViewById(R.id.user_id);
         EditText phone=findViewById(R.id.phoneNum);
         EditText verif=findViewById(R.id.verif);
@@ -129,7 +125,7 @@ public class RegisterActivity extends AppCompatActivity implements registerView 
         String stPass1= String.valueOf(pass1.getText());
         String stPass2=String.valueOf(pass2.getText());
 
-        registerData registerData = new registerData();
+        RegisterData registerData = new RegisterData();
 
         if(!stPass1.equals(stPass2)){
             Toast.makeText(this,"输入的密码不一致",Toast.LENGTH_LONG).show();

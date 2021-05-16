@@ -1,6 +1,6 @@
 package com.example.myapplication.dao;
 
-public class User {
+public class UserDao {
     String userid;
     String passed;
 

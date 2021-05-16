@@ -2,19 +2,15 @@ package com.example.myapplication.Model;
 
 import android.util.Log;
 
-import com.example.myapplication.dao.User;
-
 import java.io.IOException;
 
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class CheckName {
+public class CheckNameModel {
     String url="http://8.133.178.130:8020/user/makeSureIdCard?ID=";
     String id="4564968456496456";
     String name="刘强";
