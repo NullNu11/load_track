@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:alpha="100"
+    android:background="#F7F7F7"
     tools:context=".Activity.MainActivity">
 
     <TextView
@@ -21,107 +23,119 @@
 
     <com.example.myapplication.FontIconView
         android:id="@+id/fontIconView6"
-        android:layout_width="41dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="40dp"
         android:text="@string/userbtn"
         android:textSize="35dp"
-        app:layout_constraintEnd_toStartOf="@+id/user_id"
-        app:layout_constraintTop_toTopOf="@+id/user_id" />
-
-    <EditText
-        android:id="@+id/user_id"
-        android:layout_width="193dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginTop="48dp"
-        android:gravity="center"
-        android:hint="用户名"
-        android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toEndOf="@+id/fontIconView6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_registe" />
 
+    <EditText
+        android:id="@+id/user_id"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginRight="96dp"
+        android:background="@drawable/edit_underline_color"
+        android:gravity="left|center_vertical"
+        android:hint="用户名"
+        android:inputType="phone"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textCursorDrawable="@drawable/edit_cursor_color"
+        app:layout_constraintBottom_toBottomOf="@+id/fontIconView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fontIconView6"
+        app:layout_constraintTop_toTopOf="@+id/fontIconView6" />
+
     <com.example.myapplication.FontIconView
         android:id="@+id/fontIconView7"
-        android:layout_width="38dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="@string/passedbtn"
         android:textSize="35dp"
-        app:layout_constraintEnd_toStartOf="@+id/passwd1"
-        app:layout_constraintTop_toTopOf="@+id/passwd1" />
+        app:layout_constraintEnd_toEndOf="@+id/fontIconView6"
+        app:layout_constraintStart_toStartOf="@+id/fontIconView6"
+        app:layout_constraintTop_toBottomOf="@+id/fontIconView6" />
 
     <EditText
         android:id="@+id/passwd1"
-        android:layout_width="193dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginTop="36dp"
-        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/edit_underline_color"
+        android:gravity="left|center_vertical"
         android:hint="密码"
         android:inputType="textPassword"
         android:maxLength="16"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toEndOf="@+id/fontIconView7"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_id" />
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textCursorDrawable="@drawable/edit_cursor_color"
+        app:layout_constraintBottom_toBottomOf="@+id/fontIconView7"
+        app:layout_constraintEnd_toEndOf="@+id/user_id"
+        app:layout_constraintStart_toStartOf="@+id/user_id"
+        app:layout_constraintTop_toTopOf="@+id/fontIconView7" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginLeft="92dp"
-        android:layout_marginBottom="92dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/fillet_rectangle"
         android:onClick="addCarBtn"
         android:text="添加车辆"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="308dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="60dp"
-        android:orientation="horizontal"
-        android:padding="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.582"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwd1">
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:onClick="register"
-            android:text="注册" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:onClick="loginbtn"
-            android:text="登录"></Button>
-    </LinearLayout>
 
     <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginRight="96dp"
+        android:background="@drawable/fillet_rectangle"
+        android:onClick="register"
+        android:text="注册"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button" />
+
+    <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="52dp"
-        android:hint="地图"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/fillet_rectangle"
+        android:onClick="loginbtn"
+        android:text="登录"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwd1"></Button>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/fillet_rectangle"
         android:onClick="mapBtn"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        android:text="地图"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="@+id/button4"
+        app:layout_constraintStart_toStartOf="@+id/button4"
+        app:layout_constraintTop_toTopOf="@+id/button2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
