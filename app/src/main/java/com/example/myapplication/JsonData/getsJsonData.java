@@ -16,7 +16,7 @@ import java.util.Map;
 
 public class getsJsonData {
 
-    HashMap<String,String> map=new HashMap<>();
+
 
     public LoginJsonReturn getLoginJson(String st) {
         LoginJsonReturn loginJsonReturn = new LoginJsonReturn();
@@ -79,6 +79,7 @@ public class getsJsonData {
     //存在转义字符的json
     public TrackDao trackJson(String str) {
         //List<LatLng> latLngs = new ArrayList<LatLng>();
+        HashMap<String,String> map=new HashMap<>();
         map.put("xin","新");
         map.put("zang","藏");
         map.put("qing","青");
@@ -140,8 +141,8 @@ public class getsJsonData {
             TrackDao.setMile(jsonObject1.getDouble("mile"));
             JSONArray jsonArray1 = new JSONArray(jsonStr);
             Log.d("333333333333", String.valueOf(jsonArray1));
-            double[] x = new double[1000];
-            double[] y = new double[1000];
+            double[] x = new double[10000];
+            double[] y = new double[10000];
             for (int i = 0; i < jsonArray1.length(); i++) {
                 jsonObject = jsonArray1.getJSONObject(i);
                 x[i] = Double.parseDouble(jsonObject.getString("locationx"));

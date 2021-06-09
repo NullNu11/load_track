@@ -13,6 +13,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.amap.api.location.AMapLocation;
+import com.amap.api.location.AMapLocationClient;
+import com.amap.api.location.AMapLocationClientOption;
+import com.amap.api.location.AMapLocationListener;
 import com.example.myapplication.JsonData.getsJsonData;
 import com.example.myapplication.Presenter.LoginPre;
 import com.example.myapplication.R;
@@ -21,6 +25,8 @@ import com.example.myapplication.dao.LoginJsonReturn;
 import com.example.myapplication.dao.UserDao;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -155,4 +161,8 @@ public class MainActivity extends AppCompatActivity implements getLoginMess {
         startActivity(intent);
     }
 
+    public void locationBtn(View view) {
+        Intent intent = new Intent(MainActivity.this,locationActivity.class);
+        startActivity(intent);
+    }
 }
