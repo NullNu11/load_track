@@ -4,144 +4,207 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f7f7f7"
     tools:context=".Activity.RegisterActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="false"
+        android:alpha="0.3"
+        android:scaleType="centerCrop"
+        android:verticalScrollbarPosition="defaultPosition"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/backg"
+        tools:srcCompat="@drawable/backg" />
+
 
     <TextView
         android:id="@+id/login_registe"
-        android:layout_width="117dp"
+        android:layout_width="0dp"
         android:layout_height="64dp"
-        android:layout_marginStart="124dp"
-        android:layout_marginLeft="124dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="52dp"
         android:gravity="center"
         android:text="注册"
+        android:textColor="#0078D4"
         android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <com.example.myapplication.FontIconView
         android:id="@+id/fontIconView"
-        android:layout_width="41dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="40dp"
         android:text="@string/userbtn"
         android:textSize="35dp"
-        app:layout_constraintEnd_toStartOf="@+id/user_id"
-        app:layout_constraintTop_toTopOf="@+id/user_id" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_registe" />
 
     <EditText
         android:id="@+id/user_id"
-        android:layout_width="193dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="140dp"
-        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:background="@drawable/edit_underline_color"
+        android:gravity="left|center_vertical"
         android:hint="用户名"
-        android:maxLength="8"
         android:inputType="text"
+        android:maxLength="8"
+        android:padding="8dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp"
+        android:paddingRight="8dp"
         android:singleLine="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
->
+        android:textCursorDrawable="@drawable/edit_cursor_color"
+        app:layout_constraintBottom_toBottomOf="@+id/fontIconView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fontIconView"
+        app:layout_constraintTop_toTopOf="@+id/fontIconView" />
+    >
+
     <com.example.myapplication.FontIconView
-        android:layout_width="41dp"
-        android:layout_height="40dp"
+        android:id="@+id/fontIconView4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="@string/phone"
         android:textSize="35dp"
-        app:layout_constraintEnd_toStartOf="@+id/phoneNum"
-        app:layout_constraintTop_toTopOf="@+id/phoneNum" />
+        app:layout_constraintEnd_toEndOf="@+id/fontIconView"
+        app:layout_constraintStart_toStartOf="@+id/fontIconView"
+        app:layout_constraintTop_toBottomOf="@+id/fontIconView" />
 
     <EditText
         android:id="@+id/phoneNum"
-        android:layout_width="193dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="20dp"
-        android:singleLine="true"
-        android:inputType="phone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_underline_color"
         android:hint="请输入电话号码"
+        android:inputType="phone"
+        android:padding="8dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp"
+        android:paddingRight="8dp"
+        android:singleLine="true"
+        android:textCursorDrawable="@drawable/edit_cursor_color"
+        app:layout_constraintBottom_toBottomOf="@+id/fontIconView4"
+        app:layout_constraintEnd_toEndOf="@+id/user_id"
         app:layout_constraintStart_toStartOf="@+id/user_id"
-        app:layout_constraintTop_toBottomOf="@+id/user_id" />
+        app:layout_constraintTop_toTopOf="@+id/fontIconView4" />
 
     <EditText
         android:id="@+id/verif"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="16dp"
-        android:hint="验证码"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:background="@drawable/edit_underline_color"
+        android:hint="输入验证码"
         android:inputType="number"
-        app:layout_constraintStart_toStartOf="@+id/phoneNum"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNum" />
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textCursorDrawable="@drawable/edit_cursor_color"
+        app:layout_constraintBottom_toBottomOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="@+id/phoneNum"
+        app:layout_constraintStart_toEndOf="@+id/button5"
+        app:layout_constraintTop_toTopOf="@+id/button5" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/button5"
+        android:layout_width="108dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:hint="获取验证码"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/fillet_rectangle"
         android:onClick="getVerificationCode"
-        app:layout_constraintStart_toEndOf="@+id/verif"
-        app:layout_constraintTop_toTopOf="@+id/verif" />
+        android:text="获取验证码"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/fontIconView4"
+        app:layout_constraintTop_toBottomOf="@+id/fontIconView4" />
 
     <com.example.myapplication.FontIconView
         android:id="@+id/fontIconView2"
-        android:layout_width="38dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="@string/passedbtn"
         android:textSize="35dp"
-        app:layout_constraintEnd_toStartOf="@+id/passwd1"
-        app:layout_constraintTop_toTopOf="@+id/passwd1" />
+        app:layout_constraintStart_toStartOf="@+id/button5"
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
 
     <EditText
         android:id="@+id/passwd1"
-        android:layout_width="193dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="12dp"
-        android:singleLine="true"
-        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_underline_color"
+        android:gravity="left|center_vertical"
         android:hint="请输入密码"
         android:inputType="textPassword"
         android:maxLength="16"
+        android:padding="8dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp"
+        android:paddingRight="8dp"
+        android:singleLine="true"
+        android:textCursorDrawable="@drawable/edit_cursor_color"
+        app:layout_constraintBottom_toBottomOf="@+id/fontIconView2"
+        app:layout_constraintEnd_toEndOf="@+id/verif"
         app:layout_constraintStart_toStartOf="@+id/phoneNum"
-        app:layout_constraintTop_toBottomOf="@+id/verif" />
+        app:layout_constraintTop_toTopOf="@+id/fontIconView2" />
 
     <com.example.myapplication.FontIconView
         android:id="@+id/fontIconView3"
-        android:layout_width="38dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="@string/passedbtn"
         android:textSize="35dp"
-        app:layout_constraintEnd_toStartOf="@+id/passwd2"
-        app:layout_constraintTop_toTopOf="@+id/passwd2"></com.example.myapplication.FontIconView>
+        app:layout_constraintStart_toStartOf="@+id/fontIconView2"
+        app:layout_constraintTop_toBottomOf="@+id/fontIconView2"></com.example.myapplication.FontIconView>
 
     <EditText
         android:id="@+id/passwd2"
-        android:layout_width="193dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="24dp"
-        android:gravity="center"
-        android:singleLine="true"
-        android:hint="请再次输入密码"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_underline_color"
+        android:gravity="left|center_vertical"
+        android:hint="再次输入密码"
         android:inputType="textPassword"
         android:maxLength="16"
+        android:padding="8dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp"
+        android:paddingRight="8dp"
+        android:singleLine="true"
+        android:textCursorDrawable="@drawable/edit_cursor_color"
+        app:layout_constraintBottom_toBottomOf="@+id/fontIconView3"
+        app:layout_constraintEnd_toEndOf="@+id/passwd1"
         app:layout_constraintStart_toStartOf="@+id/passwd1"
-        app:layout_constraintTop_toBottomOf="@+id/passwd1" />
+        app:layout_constraintTop_toTopOf="@+id/fontIconView3" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/fillet_rectangle"
         android:onClick="register"
         android:text="注册"
-        app:layout_constraintStart_toStartOf="@+id/passwd2"
-        app:layout_constraintTop_toBottomOf="@+id/passwd2" />
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fontIconView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
