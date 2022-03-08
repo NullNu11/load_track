@@ -19,9 +19,53 @@
             android:layout_height="wrap_content"
             android:hint="地址" />
 
-        <com.amap.api.maps.MapView
-            android:id="@+id/mapview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+    <!--    44-->
+    <com.amap.api.maps.MapView
+        android:id="@+id/mapview"
+        android:layout_width="match_parent"
+        android:layout_height="520dp" />
 
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="424dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+    </androidx.viewpager.widget.ViewPager>
+
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/btn_one"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:button="@null"
+                android:checked="true"
+                android:text="轨迹上传"
+                android:textColor="@color/navi_selector"
+                android:textSize="30dp"></RadioButton>
+
+
+            <RadioButton
+                android:id="@+id/btn_three"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="my_btn"
+                android:text="我的"
+                android:textColor="@color/navi_selector"
+                android:textSize="30dp"></RadioButton>
+        </RadioGroup>
     </LinearLayout>
+

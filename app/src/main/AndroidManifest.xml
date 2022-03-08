@@ -23,24 +23,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.locationActivity"></activity>
-        <activity android:name=".Activity.AddCarActivity" />
-
-        <meta-data
-            android:name="com.amap.api.v2.apikey"
-            android:value="3e06585940f669fd8764fec7f6fb1d30" />
-
-        <activity android:name=".Activity.GaodeActivity" />
-        <activity android:name=".Activity.RegisterActivity" />
-        <activity android:name=".Activity.MainActivity">
+        <activity android:name=".Activity.MyActivity"></activity>
+        <activity android:name=".Activity.RouteActivity" />
+        <activity android:name=".Activity.checkNameActivity" />
+        <activity android:name=".Activity.HistoryActivity" />
+        <activity android:name=".Activity.locationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Activity.AddCarActivity" />
+        <activity android:name=".Activity.GaodeActivity" />
+        <activity android:name=".Activity.RegisterActivity" />
+        <activity android:name=".Activity.LoginActivity"></activity>
 
         <service android:name="com.amap.api.location.APSService" />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="c114456e13d645ee7bde6ad4bd3db370" />
     </application>
 
 </manifest>

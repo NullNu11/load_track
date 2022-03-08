@@ -4,14 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Looper;
+import android.util.JsonReader;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.myapplication.Model.AddCarModel;
 import com.example.myapplication.R;
 import com.example.myapplication.View.addCarView;
 import com.example.myapplication.dao.CarDao;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -31,12 +37,24 @@ public class AddCarActivity extends AppCompatActivity implements addCarView {
        new AddCarModel().addCarMod(getCarmess(), new Callback() {
            @Override
            public void onFailure(Call call, IOException e) {
-               Log.d("1111111111", e.getMessage());
+               Looper.prepare();
+               Toast.makeText(getApplicationContext(),"网络请求失败",Toast.LENGTH_LONG).show();
+               Looper.loop();
+              // Log.d("1111111111", e.getMessage());
            }
 
            @Override
            public void onResponse(Call call, Response response) throws IOException {
-               Log.d("11111111119", response.body().string());
+               String msg=response.body().string();
+               try {
+                   JSONObject jsonObject = new JSONObject(msg);
+                   msg=jsonObject.getString("msg");
+               } catch (JSONException e) {
+                   e.printStackTrace();
+               }
+               Looper.prepare();
+               Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_LONG).show();
+               Looper.loop();
            }
        });
     }

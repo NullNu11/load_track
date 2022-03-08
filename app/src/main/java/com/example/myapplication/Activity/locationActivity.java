@@ -2,8 +2,11 @@ package com.example.myapplication.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -14,7 +17,9 @@ import com.amap.api.location.AMapLocationListener;
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.CameraUpdateFactory;
 import com.amap.api.maps.MapView;
+import com.amap.api.maps.UiSettings;
 import com.amap.api.maps.model.MyLocationStyle;
+import com.amap.api.services.core.ServiceSettings;
 import com.example.myapplication.R;
 
 import java.text.SimpleDateFormat;
@@ -25,6 +30,7 @@ public class locationActivity extends AppCompatActivity {
     public AMapLocationClientOption mLocationOption = null;
     //声明AMapLocationClient类对象
     public AMapLocationClient mLocationClient = null;
+
     //声明定位回调监听器
     public AMapLocationListener mLocationListener = new AMapLocationListener() {
         @Override
@@ -69,9 +75,15 @@ public class locationActivity extends AppCompatActivity {
     private EditText shuru;
     private TextView dizhi;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //隐私政策
+        ServiceSettings.updatePrivacyShow(this, true, true);
+        ServiceSettings.updatePrivacyAgree(this,true);
+
         setContentView(R.layout.activity_location);
         dizhi = (TextView) findViewById(R.id.et_dizhi);
         shuru = (EditText) findViewById(R.id.et_shuru);
@@ -82,21 +94,34 @@ public class locationActivity extends AppCompatActivity {
         if (aMap == null) {
             aMap = mMapView.getMap();
         }
+
         location();
     }
+    private UiSettings mUiSettings;//定义一个UiSettings对象
+
     private void location() {
         MyLocationStyle myLocationStyle;
         myLocationStyle = new MyLocationStyle();//初始化定位蓝点样式类myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATION_ROTATE);//连续定位、且将视角移动到地图中心点，定位点依照设备方向旋转，并且会跟随设备移动。（1秒1次定位）如果不设置myLocationType，默认也会执行此种模式。
-        myLocationStyle.interval(2000); //设置连续定位模式下的定位间隔，只在连续定位模式下生效，单次定位模式下不会生效。单位为毫秒。
+        myLocationStyle.interval(5000); //设置连续定位模式下的定位间隔，只在连续定位模式下生效，单次定位模式下不会生效。单位为毫秒。
+//        myLocationStyle.strokeColor(Color.argb(0, 0, 0, 0));// 设置圆形的边框颜色
+//        myLocationStyle.radiusFillColor(Color.argb(0, 0, 0, 0));// 设置圆形的填充颜色
         aMap.setMyLocationStyle(myLocationStyle);//设置定位蓝点的Style
         //aMap.getUiSettings().setMyLocationButtonEnabled(true);设置默认定位按钮是否显示，非必需设置。
         aMap.setMyLocationEnabled(true);// 设置为true表示启动显示定位蓝点，false表示隐藏定位蓝点并不进行定位，默认是false。
        //初始化定位
-        mLocationClient = new AMapLocationClient(getApplicationContext());
+
+        mUiSettings = aMap.getUiSettings();//实例化UiSettings类对象
+        mUiSettings.setZoomControlsEnabled(false);
+
+        try {
+            mLocationClient = new AMapLocationClient(this.getApplicationContext());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         //设置定位回调监听
         mLocationClient.setLocationListener(mLocationListener);
-
-        aMap.moveCamera(CameraUpdateFactory.zoomTo(20));
+        //地图放大的倍数
+        aMap.moveCamera(CameraUpdateFactory.zoomTo(17));
        //初始化AMapLocationClientOption对象
         mLocationOption = new AMapLocationClientOption();
 
@@ -152,5 +177,14 @@ public class locationActivity extends AppCompatActivity {
         mLocationClient.stopLocation();//停止定位后，本地定位服务并不会被销毁
     }
 
+    public void listview(View view) {
+        Intent intent = new Intent(this, HistoryActivity.class);
+        startActivity(intent);
+    }
+
+    public void my_btn(View view) {
+        Intent intent = new Intent(this, MyActivity.class);
+        startActivity(intent);
+    }
 }
 

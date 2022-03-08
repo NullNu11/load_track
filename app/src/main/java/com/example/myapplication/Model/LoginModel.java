@@ -15,7 +15,7 @@ public class LoginModel {
                 .add("id", userDao.getUserid())
                 .add("password", userDao.getPassed()).build();
         Request requests = new Request.Builder()
-                .url("http://8.133.178.130:8020/user/login")
+                .url("http://47.101.48.189:8020/user/login")
                 .post(body)
                 .build();
         OkHttpClient client = new OkHttpClient();

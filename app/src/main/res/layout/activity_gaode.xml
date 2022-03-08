@@ -8,10 +8,8 @@
 
     <com.amap.api.maps.MapView
         android:id="@+id/map"
-
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="#EEEEEE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +21,7 @@
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="700dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,8 +44,10 @@
                 android:background="@drawable/fillet_rectangle_whilte"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
 
                 <TextView
                     android:id="@+id/mileView"
@@ -59,7 +59,7 @@
                     android:hint="2761.0"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="@+id/textView2"
-                    app:layout_constraintEnd_toEndOf="@+id/button3"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/textView2"
                     app:layout_constraintTop_toTopOf="@+id/textView2" />
 
@@ -67,30 +67,31 @@
                     android:id="@+id/textView"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="68dp"
+                    android:layout_marginLeft="68dp"
                     android:layout_marginTop="24dp"
                     android:text="车辆："
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/editText"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
                 <EditText
                     android:id="@+id/editText2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginRight="24dp"
+                    android:layout_width="207dp"
+                    android:layout_height="38dp"
+                    android:layout_marginTop="28dp"
                     android:background="@drawable/edit_underline_color"
                     android:gravity="left|center_vertical"
-                    android:hint="输入终点"
+                    android:hint="上海财经大学"
                     android:padding="8dp"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
                     android:paddingRight="8dp"
                     android:textCursorDrawable="@drawable/edit_cursor_color"
                     android:textSize="18sp"
-                    app:layout_constraintEnd_toStartOf="@+id/button3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/editText"
                     app:layout_constraintTop_toBottomOf="@+id/editText" />
 
@@ -99,28 +100,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="24dp"
                     android:layout_marginTop="24dp"
-                    android:layout_marginBottom="40dp"
                     android:text="哈希："
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/textView3"
                     app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-                <Button
-                    android:id="@+id/button3"
-                    android:layout_width="64dp"
-                    android:layout_height="0dp"
-                    android:layout_marginEnd="32dp"
-                    android:layout_marginRight="32dp"
-                    android:background="@drawable/fillet_rectangle"
-                    android:selectAllOnFocus="false"
-                    android:text="确定"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/editText2"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/editText2"></Button>
 
                 <TextView
                     android:id="@+id/timeView"
@@ -137,7 +122,7 @@
                 <TextView
                     android:id="@+id/hashView"
                     android:layout_width="0dp"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:gravity="left|center_vertical"
                     android:hint="13a2f1fa-e53d-4881-8563-06b6f6f048ca"
                     android:textSize="18sp"
@@ -191,28 +176,27 @@
                     android:text="区块："
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/editText"
+                    app:layout_constraintStart_toStartOf="@+id/textView4"
                     app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
                 <EditText
                     android:id="@+id/editText"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginLeft="32dp"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginRight="24dp"
+                    android:layout_width="200dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginLeft="88dp"
+                    android:layout_marginTop="52dp"
                     android:background="@drawable/edit_underline_color"
                     android:gravity="left|center_vertical"
-                    android:hint="输入起点"
+                    android:hint="同济大学"
                     android:padding="8dp"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
                     android:paddingRight="8dp"
                     android:textCursorDrawable="@drawable/edit_cursor_color"
                     android:textSize="18sp"
-                    app:layout_constraintEnd_toStartOf="@+id/button3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.161"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -227,20 +211,23 @@
                     app:layout_constraintEnd_toEndOf="@+id/timeView"
                     app:layout_constraintStart_toStartOf="@+id/timeView"
                     app:layout_constraintTop_toTopOf="@+id/textView3"></TextView>
+
+                <!--                <Button-->
+                <!--                    android:id="@+id/button6"-->
+                <!--                    android:layout_width="64dp"-->
+                <!--                    android:layout_height="36dp"-->
+                <!--                    android:layout_marginTop="24dp"-->
+                <!--                    android:layout_marginBottom="24dp"-->
+                <!--                    android:background="@drawable/fillet_rectangle"-->
+                <!--                    android:selectAllOnFocus="false"-->
+                <!--                    android:text="回溯"-->
+                <!--                    android:textColor="#FFFFFF"-->
+                <!--                    android:textSize="18sp"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                    app:layout_constraintStart_toStartOf="@+id/textView5"-->
+                <!--                    app:layout_constraintTop_toBottomOf="@+id/hashView" />-->
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-    <!--    <com.amap.api.maps.MapView-->
-    <!--        android:id="@+id/map"-->
-    <!--        android:layout_width="361dp"-->
-    <!--        android:layout_height="372dp"-->
-    <!--        android:layout_marginStart="24dp"-->
-    <!--        android:layout_marginLeft="24dp"-->
-    <!--        android:layout_marginTop="36dp"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/hashView">-->
-
-    <!--    </com.amap.api.maps.MapView>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

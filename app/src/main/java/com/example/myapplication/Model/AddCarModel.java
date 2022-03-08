@@ -13,7 +13,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 
 public class AddCarModel {
-    String url="http://8.133.178.130:8010/car/add";
+    String url="http://47.101.48.189:8010/car/add";
 
     public void addCarMod(CarDao carDao, Callback call) {
        if(carDao !=null){

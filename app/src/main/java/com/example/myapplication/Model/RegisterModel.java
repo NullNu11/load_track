@@ -18,8 +18,9 @@ public class RegisterModel {
     //发送验证码
    public void verificationCode(String phone,Callback callback)
     {
+        //http://47.101.48.189:8020/
         OkHttpClient client = new OkHttpClient();
-        String url = "http://8.133.178.130:8020/user/getMobile?mobile=";
+        String url = "http://47.101.48.189:8020/user/getMobile?mobile=";
         final Request request = new Request.Builder()
                 .url(url + phone)
                 .get()
@@ -32,7 +33,7 @@ public class RegisterModel {
        if(!data.getPhoneNum().equals("error"))
        {
            OkHttpClient client = new OkHttpClient();
-           String url = "http://8.133.178.130:8020/user/registe?code=";
+           String url = "http://47.101.48.189:8020/user/registe?code=";
 //        RequestBody body = new FormBody.Builder()
 //                .add("password", pass)
 //                .add("userId", phone)

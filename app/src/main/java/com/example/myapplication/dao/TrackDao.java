@@ -6,12 +6,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TrackDao {
-    String userid;
-    String devstr;
-    String trid;
-    double mile;
-    String time;
-    String devid;
+    String userid="";
+    String devstr="";
+    String trid="";
+    double mile=0;
+    String time="";
+    String devid="";
+
+    String carid="";
+
+    public String getCarid() {
+        return carid;
+    }
+
+    public void setCarid(String carid) {
+        this.carid = carid;
+    }
+
     //public List<LatLng> latLngs;
     public List<LatLng> latLngs = new ArrayList<LatLng>();
 

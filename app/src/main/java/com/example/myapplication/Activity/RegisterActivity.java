@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.myapplication.JsonData.getsJsonData;
+import com.example.myapplication.tools.getsJsonData;
 import com.example.myapplication.Presenter.RegisterPre;
 import com.example.myapplication.R;
 import com.example.myapplication.View.registerView;
